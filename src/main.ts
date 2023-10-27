@@ -1,7 +1,7 @@
 import "./style.css";
 import ko from "knockout";
 import Navigo from "navigo";
-import duels, { Duel } from "./images/index.ts";
+import duels, { Duel } from "../public/images/index.ts";
 
 console.log(duels);
 
