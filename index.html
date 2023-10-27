@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/photo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <ul style="list-style: none" data-bind="foreach: duels">
+          <li>
+            <div data-bind="click: $root.goToDuel">
+              <span data-bind="text: $data.title"></span>
+              <span data-bind="text: $data.date.toLocaleDateString()"></span>
+            </div>
+            <div data-bind="if: $data.date === $root.chosenDuel()?.date">
+              <img
+                data-bind="attr:{ src: `/src/images/${folder}/${initial}`,
+              alt: `Image initiale pour ${$data.title}` }"
+                width="150"
+                height="150"
+                style="padding: 5px"
+                alt=""
+              />
+              <ul
+                style="list-style: none"
+                data-bind="foreach: $root.chosenDuel().answers"
+              >
+                <li>
+                  <img
+                    data-bind="attr:{ src:
+                  `/src/images/${$parent.folder}/${$data}`, alt: `Image de
+                  réponse pour ${$data.title}` }"
+                    width="150"
+                    height="150"
+                    style="padding: 5px"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
