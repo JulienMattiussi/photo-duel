@@ -19,7 +19,7 @@ interface WebmailViewModel {
 class WebmailViewModel {
   // Data
   constructor() {
-    this.duels = duels.sort((a, b) => (a.date > b.date ? 1 : -1));
+    this.duels = duels.sort((a, b) => (a.date < b.date ? 1 : -1));
     this.chosenDuel = ko.observable();
 
     // Behaviours

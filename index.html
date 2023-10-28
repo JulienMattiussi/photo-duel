@@ -18,7 +18,7 @@
             <div data-bind="if: $data.date === $root.chosenDuel()?.date">
               <img
                 data-bind="attr:{ src: `/images/${folder}/${initial}`,
-              alt: `Image initiale pour ${$data.title}` }"
+              alt: `Image initiale pour ${$parent.title}` }"
                 width="150"
                 height="150"
                 style="padding: 5px"
@@ -32,7 +32,7 @@
                   <img
                     data-bind="attr:{ src:
                   `/images/${$parent.folder}/${$data}`, alt: `Image de
-                  réponse pour ${$data.title}` }"
+                  réponse pour ${$parent.title}` }"
                     width="150"
                     height="150"
                     style="padding: 5px"
