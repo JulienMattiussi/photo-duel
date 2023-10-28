@@ -46,7 +46,7 @@ const duels: Duel[] = [
     title: "Patate",
     folder: "duel-23-10-25-A",
     initial: "init-Patate.jpg",
-    answers: [],
+    answers: ["answer-1.jpg"],
   },
   {
     date: new Date(2023, 9, 21, 0, 0, 0),
@@ -67,7 +67,7 @@ const duels: Duel[] = [
     title: "Boule",
     folder: "duel-23-10-20-A",
     initial: "init-Boule.jpg",
-    answers: ["answer-1.jpg"],
+    answers: [],
   },
   {
     date: new Date(2023, 9, 19, 0, 0, 0),
