@@ -28,11 +28,20 @@
                 style="list-style: none"
                 data-bind="foreach: $root.chosenDuel().answers"
               >
-                <li>
+                <li data-bind="if: $root.isImage($data)">
                   <img
-                    data-bind="attr:{ src:
-                  `/images/${$parent.folder}/${$data}`, alt: `Image de
-                  réponse pour ${$parent.title}` }"
+                    data-bind="attr:{ src: `/images/${$parent.folder}/${$data}`, 
+                    alt: `Image de réponse pour ${$parent.title}` }"
+                    width="150"
+                    height="150"
+                    style="padding: 5px"
+                    alt=""
+                  />
+                </li>
+                <li data-bind="if: $root.isVideo($data)">
+                  <video
+                    data-bind="attr:{ src: `/images/${$parent.folder}/${$data}`, 
+                      alt: `Vidéo de réponse pour ${$parent.title}` }"
                     width="150"
                     height="150"
                     style="padding: 5px"
