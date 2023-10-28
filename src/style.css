@@ -111,7 +111,7 @@ button:focus-visible {
   transition: height 0.2s ease-in-out;
 }
 
-.duelBloc:hover {
+.duelBloc:hover:not(.openDuelBloc) {
   color: rgba(255, 255, 255, 0.87);
   background-color: #1a1a1a;
 }
