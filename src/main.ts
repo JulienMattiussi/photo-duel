@@ -49,6 +49,10 @@ class WebmailViewModel {
   isVideo = (filename: string) => {
     return !!filename.match(/\.(mp4|webm|ogg)$/i);
   };
+
+  isDuelActive = (duel: Duel) => {
+    return duel.date === this.chosenDuel()?.date;
+  };
 }
 
 ko.applyBindings(new WebmailViewModel());
