@@ -160,6 +160,12 @@ img {
   object-fit: contain;
 }
 
+@media (max-width: 600px) {
+  img.arrow {
+    transform: rotate(90deg);
+  }
+}
+
 .bigImage {
   position: fixed;
   top: 10px;
