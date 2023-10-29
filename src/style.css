@@ -39,7 +39,6 @@ h1 {
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -96,12 +95,19 @@ button:focus-visible {
   }
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .duelBloc {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 600px;
+  max-width: calc(100vw - 20px);
   padding: 10px 0px 0px 0px;
   margin: 20px auto;
   border-radius: 8px;
@@ -144,10 +150,21 @@ button:focus-visible {
   background-color: #1a1a1a;
 }
 
+@media (max-width: 600px) {
+  .imageBloc {
+    flex-direction: column;
+  }
+}
+
+img {
+  object-fit: contain;
+}
+
 .bigImage {
   position: fixed;
   top: 10px;
   left: 50%;
+  object-fit: contain;
   transform: translateX(-50%);
   height: calc(100vh - 20px);
   max-width: calc(100vw - 20px);

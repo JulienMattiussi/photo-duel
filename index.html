@@ -9,7 +9,7 @@
   <body>
     <div id="app">
       <div>
-        <ul style="list-style: none" data-bind="foreach: duels">
+        <ul data-bind="foreach: duels">
           <li
             data-bind="click: $root.goToDuel, attr: { class: $root.isDuelActive($data) ? 'duelBloc openDuelBloc' : 'duelBloc'}"
           >
@@ -29,10 +29,7 @@
                 style="cursor: pointer"
                 alt=""
               />
-              <ul
-                style="list-style: none"
-                data-bind="foreach: $root.chosenDuel().answers"
-              >
+              <ul data-bind="foreach: $root.chosenDuel().answers">
                 <li data-bind="if: $root.isImage($data)">
                   <img
                     data-bind="click: (data, event) => $root.goToImage(data, $parent, event), 
