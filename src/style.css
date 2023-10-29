@@ -143,3 +143,12 @@ button:focus-visible {
   border-radius: 0px 0px 8px 8px;
   background-color: #1a1a1a;
 }
+
+.bigImage {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: calc(100vh - 20px);
+  max-width: calc(100vw - 20px);
+}

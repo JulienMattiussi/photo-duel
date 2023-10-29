@@ -19,10 +19,14 @@
             </div>
             <div data-bind="if: $root.isDuelActive($data)" class="imageBloc">
               <img
-                data-bind="attr:{ src: `/images/${folder}/${initial}`,
-              alt: `Image initiale pour ${$parent.title}` }"
+                data-bind="click: (data, event) => $root.goToImage($data.initial, $data, event), 
+                    attr:{ 
+                        src: `/images/${folder}/${initial}`,
+                        alt: `Image initiale pour ${$data.title}`,
+                        class: $root.isImageActive($data.title, initial) ? 'bigImage' : ''
+                    }"
                 height="400"
-                style="padding: 5px"
+                style="cursor: pointer"
                 alt=""
               />
               <ul
@@ -31,19 +35,27 @@
               >
                 <li data-bind="if: $root.isImage($data)">
                   <img
-                    data-bind="attr:{ src: `/images/${$parent.folder}/${$data}`, 
-                    alt: `Image de réponse pour ${$parent.title}` }"
+                    data-bind="click: (data, event) => $root.goToImage(data, $parent, event), 
+                        attr:{ 
+                            src: `/images/${$parent.folder}/${$data}`, 
+                            alt: `Image de réponse pour ${$parent.title}`,
+                            class: $root.isImageActive($parent.title, $data) ? 'bigImage' : ''
+                        }"
                     height="400"
-                    style="padding: 5px"
+                    style="cursor: pointer"
                     alt=""
                   />
                 </li>
                 <li data-bind="if: $root.isVideo($data)">
                   <video
-                    data-bind="attr:{ src: `/images/${$parent.folder}/${$data}`, 
-                      alt: `Vidéo de réponse pour ${$parent.title}` }"
+                    data-bind="click: (data, event) => $root.goToImage(data, $parent, event), 
+                        clickBubble: false, 
+                        attr:{ 
+                            src: `/images/${$parent.folder}/${$data}`, 
+                            alt: `Vidéo de réponse pour ${$parent.title}` 
+                        }"
                     height="400"
-                    style="padding: 5px"
+                    style="cursor: pointer"
                     alt=""
                   />
                 </li>

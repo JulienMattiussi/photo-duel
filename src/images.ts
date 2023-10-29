@@ -1,3 +1,5 @@
+import { Duel } from "./types";
+
 const duels: Duel[] = [
   {
     date: new Date(2023, 9, 27, 20, 11, 0),
@@ -259,13 +261,5 @@ const duels: Duel[] = [
     answers: ["answer-1.jpg"],
   },
 ];
-
-export interface Duel {
-  date: Date;
-  title: string;
-  folder: string;
-  initial: string;
-  answers: string[];
-}
 
 export default duels;
