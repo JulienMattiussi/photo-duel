@@ -162,13 +162,27 @@ li {
   }
 }
 
-img {
+img,
+video {
   object-fit: contain;
+}
+
+.blured.blured:not(.bigImage) {
+  filter: blur(1rem);
+}
+
+.blured:hover:not(.bigImage) {
+  filter: unset;
 }
 
 @media (max-width: 600px) {
   img.arrow {
     transform: rotate(90deg);
+  }
+
+  img.blured,
+  video.blured {
+    filter: unset !important;
   }
 }
 

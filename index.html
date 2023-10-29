@@ -37,7 +37,7 @@
                         attr:{ 
                             src: `/images/${$parent.folder}/${$data}`, 
                             alt: `Image de réponse pour ${$parent.title}`,
-                            class: $root.isImageActive($parent.title, $data) ? 'bigImage' : ''
+                            class: $root.isImageActive($parent.title, $data) ? 'bigImage blured' : 'blured'
                         }"
                     height="400"
                     style="cursor: pointer"
@@ -47,10 +47,10 @@
                 <li data-bind="if: $root.isVideo($data)">
                   <video
                     data-bind="click: (data, event) => $root.goToImage(data, $parent, event), 
-                        clickBubble: false, 
                         attr:{ 
                             src: `/images/${$parent.folder}/${$data}`, 
-                            alt: `Vidéo de réponse pour ${$parent.title}` 
+                            alt: `Vidéo de réponse pour ${$parent.title}`,
+                            class: $root.isImageActive($parent.title, $data) ? 'bigImage blured' : 'blured'
                         }"
                     height="400"
                     style="cursor: pointer"
