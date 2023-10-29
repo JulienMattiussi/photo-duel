@@ -4,6 +4,7 @@ export interface Duel {
   folder: string;
   initial: string;
   answers: string[];
+  nsfw?: boolean;
 }
 
 export interface DuelRouteParams {

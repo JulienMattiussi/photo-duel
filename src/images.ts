@@ -35,6 +35,7 @@ const duels: Duel[] = [
     folder: "duel-23-10-25-C",
     initial: "init-Veste.jpg",
     answers: ["answer-1.jpg"],
+    nsfw: true,
   },
   {
     date: new Date(2023, 9, 25, 12, 0, 0),
@@ -42,6 +43,7 @@ const duels: Duel[] = [
     folder: "duel-23-10-25-B",
     initial: "init-Sourire.jpg",
     answers: ["answer-1.jpg"],
+    nsfw: true,
   },
   {
     date: new Date(2023, 9, 25, 12, 40, 0),
@@ -189,6 +191,7 @@ const duels: Duel[] = [
     folder: "duel-23-10-04-C",
     initial: "init-Pigeon.jpg",
     answers: ["answer-1.mp4"],
+    nsfw: true,
   },
   {
     date: new Date(2023, 9, 4, 17, 20, 0),
@@ -196,6 +199,7 @@ const duels: Duel[] = [
     folder: "duel-23-10-04-B",
     initial: "init-Bulle.jpg",
     answers: ["answer-1.jpg"],
+    nsfw: true,
   },
   {
     date: new Date(2023, 9, 4, 16, 0, 0),
@@ -210,6 +214,7 @@ const duels: Duel[] = [
     folder: "duel-23-10-03-D",
     initial: "init-Tontons.jpg",
     answers: ["answer-1.jpg"],
+    nsfw: true,
   },
   {
     date: new Date(2023, 9, 3, 14, 40, 0),
@@ -217,6 +222,7 @@ const duels: Duel[] = [
     folder: "duel-23-10-03-C",
     initial: "init-Mireille.jpg",
     answers: ["answer-1.jpg"],
+    nsfw: true,
   },
   {
     date: new Date(2023, 9, 3, 13, 20, 0),
@@ -245,6 +251,7 @@ const duels: Duel[] = [
     folder: "duel-23-09-29-C",
     initial: "init-Chienne.jpg",
     answers: ["answer-1.jpg"],
+    nsfw: true,
   },
   {
     date: new Date(2023, 8, 29, 19, 0, 0),
@@ -259,6 +266,7 @@ const duels: Duel[] = [
     folder: "duel-23-09-29-A",
     initial: "init-Stan.jpg",
     answers: ["answer-1.jpg"],
+    nsfw: true,
   },
 ];
 

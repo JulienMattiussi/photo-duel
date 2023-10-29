@@ -17,47 +17,71 @@
               <span class="duelTitle" data-bind="text: $data.title"></span>
               (<span data-bind="text: $data.date.toLocaleDateString()"></span>)
             </div>
-            <div data-bind="if: $root.isDuelActive($data)" class="imageBloc">
-              <img
-                data-bind="click: (data, event) => $root.goToImage($data.initial, $data, event), 
+            <div class="contentBloc">
+              <div
+                data-bind="if: $root.isDuelActive($data) && ($root.isUnlocked() || !$data.nsfw)"
+                class="imageBloc"
+              >
+                <img
+                  data-bind="click: (data, event) => $root.goToImage($data.initial, $data, event), 
                     attr:{ 
                         src: `/images/${folder}/${initial}`,
                         alt: `Image initiale pour ${$data.title}`,
                         class: $root.isImageActive($data.title, initial) ? 'bigImage' : ''
                     }"
-                height="400"
-                style="cursor: pointer"
-                alt=""
-              />
-              <img src="/arrow.png" class="arrow" alt="arrow" height="50px" />
-              <ul data-bind="foreach: $root.chosenDuel().answers">
-                <li data-bind="if: $root.isImage($data)">
-                  <img
-                    data-bind="click: (data, event) => $root.goToImage(data, $parent, event), 
+                  height="400"
+                  style="cursor: pointer"
+                  alt=""
+                />
+                <img src="/arrow.png" class="arrow" alt="arrow" height="50px" />
+                <ul data-bind="foreach: $root.chosenDuel().answers">
+                  <li data-bind="if: $root.isImage($data)">
+                    <img
+                      data-bind="click: (data, event) => $root.goToImage(data, $parent, event), 
                         attr:{ 
                             src: `/images/${$parent.folder}/${$data}`, 
                             alt: `Image de réponse pour ${$parent.title}`,
                             class: $root.isImageActive($parent.title, $data) ? 'bigImage blured' : 'blured'
                         }"
-                    height="400"
-                    style="cursor: pointer"
-                    alt=""
-                  />
-                </li>
-                <li data-bind="if: $root.isVideo($data)">
-                  <video
-                    data-bind="click: (data, event) => $root.goToImage(data, $parent, event), 
+                      height="400"
+                      style="cursor: pointer"
+                      alt=""
+                    />
+                  </li>
+                  <li data-bind="if: $root.isVideo($data)">
+                    <video
+                      data-bind="click: (data, event) => $root.goToImage(data, $parent, event), 
                         attr:{ 
                             src: `/images/${$parent.folder}/${$data}`, 
                             alt: `Vidéo de réponse pour ${$parent.title}`,
                             class: $root.isImageActive($parent.title, $data) ? 'bigImage blured' : 'blured'
                         }"
-                    height="400"
-                    style="cursor: pointer"
-                    alt=""
+                      height="400"
+                      style="cursor: pointer"
+                      alt=""
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div
+                data-bind="if: $root.isDuelActive($data) && !$root.isUnlocked() && $data.nsfw"
+                class="lockBloc"
+              >
+                <span class="lockTitle">Not Safe For Work</span>
+                <span>Vous devez être connecté pour voir ces images</span>
+                <div>
+                  <label for="password">Mot de passe :</label>
+                  <input
+                    type="password"
+                    data-bind="value: $root.password"
+                    aria-label="Mot de passe"
                   />
-                </li>
-              </ul>
+                </div>
+                <button data-bind="click: $root.unlock">Déverrouiller</button>
+                <span data-bind="if: $root.showWrongPassword" class="lockWrong"
+                  >Mauvais mot de passe</span
+                >
+              </div>
             </div>
           </li>
         </ul>

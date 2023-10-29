@@ -11,6 +11,9 @@ class WebmailViewModel {
     this.duels = duels.sort((a, b) => (a.date < b.date ? 1 : -1));
     this.chosenDuel = ko.observable();
     this.chosenImage = ko.observable();
+    this.password = ko.observable("");
+    this.isUnlocked = ko.observable(false);
+    this.showWrongPassword = ko.observable(false);
 
     // Behaviours
     this.goToDuel = (duel: Duel) => {
@@ -21,6 +24,14 @@ class WebmailViewModel {
       if (this.chosenImage() !== image) {
         event.stopPropagation();
         router.navigate(`${duel.title}/${image}`);
+      }
+    };
+
+    this.unlock = () => {
+      if (this.password() === "interdit") {
+        this.isUnlocked(true);
+      } else {
+        this.showWrongPassword(true);
       }
     };
 
@@ -71,8 +82,12 @@ interface WebmailViewModel {
   duels: Duel[];
   chosenDuel: ko.Observable<Duel | undefined>;
   chosenImage: ko.Observable<string | undefined>;
+  password: ko.Observable<string>;
+  isUnlocked: ko.Observable<boolean>;
+  showWrongPassword: ko.Observable<boolean>;
   goToDuel: (duel: Duel) => void;
   goToImage: (image: string, duel: Duel, event: Event) => void;
+  unlock: (password: string) => void;
   isImage: (filename: string) => boolean;
   isVideo: (filename: string) => boolean;
 }
