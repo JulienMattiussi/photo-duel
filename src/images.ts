@@ -38,14 +38,6 @@ const duels: Duel[] = [
     nsfw: true,
   },
   {
-    date: new Date(2023, 9, 25, 12, 0, 0),
-    title: "Sourire géné",
-    folder: "duel-23-10-25-B",
-    initial: "init-Sourire.jpg",
-    answers: ["answer-1.jpg"],
-    nsfw: true,
-  },
-  {
     date: new Date(2023, 9, 25, 12, 40, 0),
     title: "Patate",
     folder: "duel-23-10-25-A",
@@ -72,6 +64,7 @@ const duels: Duel[] = [
     folder: "duel-23-10-20-A",
     initial: "init-Boule.jpg",
     answers: [],
+    nsfw: true,
   },
   {
     date: new Date(2023, 9, 19, 0, 0, 0),
@@ -209,22 +202,6 @@ const duels: Duel[] = [
     answers: ["answer-1.jpg"],
   },
   {
-    date: new Date(2023, 9, 3, 15, 0, 0),
-    title: "Les tontons tout nus",
-    folder: "duel-23-10-03-D",
-    initial: "init-Tontons.jpg",
-    answers: ["answer-1.jpg"],
-    nsfw: true,
-  },
-  {
-    date: new Date(2023, 9, 3, 14, 40, 0),
-    title: "Mireille",
-    folder: "duel-23-10-03-C",
-    initial: "init-Mireille.jpg",
-    answers: ["answer-1.jpg"],
-    nsfw: true,
-  },
-  {
     date: new Date(2023, 9, 3, 13, 20, 0),
     title: "Frites",
     folder: "duel-23-10-03-B",
@@ -244,14 +221,6 @@ const duels: Duel[] = [
     folder: "duel-23-10-01-A",
     initial: "init-FleurViolette.jpg",
     answers: ["answer-1.jpg"],
-  },
-  {
-    date: new Date(2023, 8, 29, 20, 0, 0),
-    title: "Chienne",
-    folder: "duel-23-09-29-C",
-    initial: "init-Chienne.jpg",
-    answers: ["answer-1.jpg"],
-    nsfw: true,
   },
   {
     date: new Date(2023, 8, 29, 19, 0, 0),
